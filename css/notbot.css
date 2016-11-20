@@ -1,0 +1,276 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    color: #505050;
+    background-color: #f4f2f7;
+    line-height: 1.25;
+}
+a {
+    color: #505050;
+    font-weight: bold;
+}
+button, .button {
+    min-width: 150px;
+    line-height: 40px;
+    cursor: pointer;
+
+    font-size: 1.15em;
+    font-weight: bold;
+    color: #46a6ea;
+    background-color: #282828;
+    text-align: center;
+
+    border: 1px solid #3f3f3f;
+    -webkit-border-radius: 3px;
+       -moz-border-radius: 3px;
+            border-radius: 3px;
+
+    -webkit-transition-duration: 0.2s;
+       -moz-transition-duration: 0.2s;
+         -o-transition-duration: 0.2s;
+            transition-duration: 0.2s;
+}
+button:hover {
+    color: #fcf8fa;
+    background-color: #3998d6;
+    border: 1px solid #3998d6;
+}
+
+/* Fancy checkboxes */
+/* http://stackoverflow.com/questions/4148499/how-to-style-checkbox-using-css */
+input[type='checkbox'] {
+    display: none;
+}
+input[type='checkbox'] + label {
+    position: relative;
+    cursor: pointer;
+}
+input[type='checkbox'] + label > span {
+    display: inline-block;
+    vertical-align: -1px;
+    width: 17px;
+    height: 17px;
+    margin-right: 4px;
+    color: #3998d6;
+    background-color: #505050;
+    text-align: center;
+    cursor: pointer;
+
+    border: 4px solid #353535;
+    -webkit-border-radius: 3px;
+       -moz-border-radius: 3px;
+            border-radius: 3px;
+}
+input[type='checkbox'] + label > span::before {
+    content: '\2714';
+    opacity: 0;
+}
+input[type='checkbox'] + label:hover > span::before {
+    opacity: 0.55;
+}
+input[type='checkbox']:checked + label > span::before {
+    opacity: 1;
+}
+
+/* Fancy radio buttons */
+input[type='radio'] {
+    display: none;
+}
+input[type='radio'] + label {
+    position: relative;
+    cursor: pointer;
+}
+input[type='radio'] + label > span {
+    display: inline-block;
+    vertical-align: -5px;
+    width: 17px;
+    height: 17px;
+    margin-right: 4px;
+    color: #3998d6;
+    background-color: #505050;
+    text-align: center;
+    cursor: pointer;
+
+    border: 4px solid #353535;
+    -webkit-border-radius: 100%;
+       -moz-border-radius: 100%;
+            border-radius: 100%;
+}
+input[type='radio'] + label:hover > span {
+    background-color: rgb(35, 115, 169);
+}
+input[type='radio']:checked + label > span{
+    background-color: #3998d6;
+}
+
+.button {
+    color: #fcf8fa;
+    background-color: #3998d6;
+    border: 1px solid #3998d6;
+    display: inline-block;
+    cursor: default;
+}
+
+#container {
+    width: 550px;
+    margin: 0px auto;
+    text-align: center;
+}
+#game-container {
+    position: relative;
+    margin-bottom: 20px;
+}
+/* Insert pseudo-element to clear the area. */
+#header::after {
+    content: '';
+    display: block;
+    clear: both;
+    margin-bottom: 10px;
+}
+#grid-container {
+    background-color: #282828;
+    -webkit-border-radius: 6px;
+       -moz-border-radius: 6px;
+            border-radius: 6px;
+}
+#grid {
+    width: 100%;
+    border-spacing: 15px;
+}
+#win-screen {
+    display: none;
+    /* Stretch it. */
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    /* Display above all. */
+    z-index: 100;
+
+    /* background-color: #edc22e */
+    background-color: rgba(255, 226, 36, 0.775);
+    -webkit-box-shadow: 0px 0px 30px 10px rgba(243, 215, 116, 0.75);
+       -moz-box-shadow: 0px 0px 30px 10px rgba(243, 215, 116, 0.75);
+            box-shadow: 0px 0px 30px 10px rgba(243, 215, 116, 0.75);
+}
+#win-screen > div {
+    /* Center it. */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#win-screen .restart-button {
+    margin: 10px 0px 25px;
+}
+#win {
+    min-width: 350px;
+    color: #f2f0f5;
+    font-size: 75px;
+    font-weight: bold;
+}
+
+#notbot {
+    font-size: 85px;
+    font-weight: bold;
+}
+#exclamation {
+    font-family: Times New Roman;
+    font-size: 90px;
+}
+#description {
+    margin-bottom: 10px;
+}
+#options {
+    margin-bottom: 12px;
+}
+#options label {
+    margin: 0px 10px 0px 4px;
+}
+#checkboxes {
+    margin-bottom: 5px;
+}
+#new-game {
+    /* Vertical centering. */
+    position: relative;
+    top: 21px;
+
+    float: left;
+    margin-left: 12px;
+}
+#stats {
+    float: right;
+    margin-right: 12px;
+}
+#stats > div:first-child {
+    margin-bottom: 5px;
+}
+#info {
+    margin-bottom: 15px;
+}
+#more {
+    margin-top: 20px;
+}
+#social {
+    margin: 3px 0px 20px;
+}
+#social > div {
+    vertical-align: top;
+    /* Override default FB display style for mobile. */
+    display: inline-block;
+}
+#social > iframe {
+    /* Use this instead of frameborder=0. */
+    border: none;
+    margin-top: 2px;
+}
+#about {
+    margin: 20px 0px 20px;
+}
+
+.cell {
+    color: #3998d6;
+    background-color: #505050;
+    -webkit-border-radius: 3px;
+       -moz-border-radius: 3px;
+            border-radius: 3px;
+}
+.bot, .post {
+    position: absolute;
+    display: table;
+
+    font-size: 55px;
+    font-weight: bold;
+    text-align: center;
+
+    -webkit-border-radius: 3px;
+       -moz-border-radius: 3px;
+            border-radius: 3px;
+}
+.bot {
+    /* Bot above post. */
+    z-index: 2;
+
+    cursor: pointer;
+    /* background-color: #3998d6; */
+    background-color: rgba(57, 152, 214, 0.9)
+}
+.bot > span, .post > span {
+    display: table-cell;
+    vertical-align: middle;
+}
+.bot > .number {
+    position: relative;
+    left: 14px;
+}
+.post {
+    /* Post below bot. */
+    z-index: 1;
+
+    background-color: rgba(255, 226, 36, 0.975);
+}
